@@ -13,7 +13,7 @@ function ToastPlayground() {
   const radioGroupRef = useRef(null);
   const [variantOption, setVariantOption] = useState(() => VARIANT_OPTIONS[0]);
   const [messageInput, setMessageInput] = useState("");
-  const { toasts, createToast, dismissToast } = useContext(ToastContext);
+  const { createToast } = useContext(ToastContext);
 
   function onVariantOptionChange(event) {
     setVariantOption(event?.target?.value);
@@ -99,7 +99,7 @@ function ToastPlayground() {
           </div>
         </div>
       </form>
-      <ToastShelf toasts={toasts} dismissToast={dismissToast} />
+      <ToastShelf />
     </div>
   );
 }
